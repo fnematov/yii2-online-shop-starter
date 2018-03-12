@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d05e6c1e18753e4607246c5dc9e164cc",
+    "content-hash": "8d6355a47429a4cad070465ee27b6829",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -22,6 +22,29 @@
             },
             "require": {
                 "bower-asset/jquery": ">=1.9.1,<4.0"
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/eonasdan-bootstrap-datetimepicker",
+            "version": "4.17.47",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Eonasdan/bootstrap-datetimepicker.git",
+                "reference": "25c11d79e614bc6463a87c3dd9cbf8280422e006"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Eonasdan/bootstrap-datetimepicker/zipball/25c11d79e614bc6463a87c3dd9cbf8280422e006",
+                "reference": "25c11d79e614bc6463a87c3dd9cbf8280422e006",
+                "shasum": null
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.8.3",
+                "bower-asset/moment": ">=2.10.5"
             },
             "type": "bower-asset",
             "license": [
@@ -62,6 +85,25 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/77d2a51d0520d2ee44173afdf4e40a9201f5964e",
                 "reference": "77d2a51d0520d2ee44173afdf4e40a9201f5964e",
+                "shasum": null
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/moment",
+            "version": "2.21.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/moment/moment.git",
+                "reference": "7c4c091bedb86ca6c1a5c5419ad5204ef3926347"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/moment/moment/zipball/7c4c091bedb86ca6c1a5c5419ad5204ef3926347",
+                "reference": "7c4c091bedb86ca6c1a5c5419ad5204ef3926347",
                 "shasum": null
             },
             "type": "bower-asset",
@@ -325,6 +367,56 @@
                 "mailer"
             ],
             "time": "2018-01-23T07:37:21+00:00"
+        },
+        {
+            "name": "trntv/yii2-datetime-widget",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/trntv/yii2-datetime-widget.git",
+                "reference": "d064d312ff17af03df26a67846e1f772c99d5020"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/trntv/yii2-datetime-widget/zipball/d064d312ff17af03df26a67846e1f772c99d5020",
+                "reference": "d064d312ff17af03df26a67846e1f772c99d5020",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/eonasdan-bootstrap-datetimepicker": "~4.0",
+                "yiisoft/yii2": "~2.0"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "asset-installer-paths": {
+                    "npm-asset-library": "vendor/npm",
+                    "bower-asset-library": "vendor/bower"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "trntv\\yii\\datetime\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Eugene Terentev",
+                    "email": "eugene@terentev.net"
+                }
+            ],
+            "description": "Date/Time Picker widget for Yii2 framework",
+            "keywords": [
+                "bootstrap",
+                "datetime picker",
+                "extension",
+                "widget",
+                "yii2"
+            ],
+            "time": "2016-02-12T07:10:46+00:00"
         },
         {
             "name": "yiisoft/yii2",

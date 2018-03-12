@@ -2,6 +2,8 @@
 
 namespace app\modules\admin\controllers;
 
+use mdm\admin\models\form\Login;
+use Yii;
 use yii\web\Controller;
 
 /**
@@ -16,5 +18,26 @@ class DefaultController extends Controller
     public function actionIndex()
     {
         return $this->render('index');
+    }
+
+    /**
+     * @return string
+     */
+    public function actionLogin()
+    {
+        if (!Yii::$app->getUser()->isGuest) {
+            return $this->goHome();
+        }
+
+        $this->layout = 'login';
+        $model = new Login();
+
+        if ($model->load(Yii::$app->getRequest()->post()) && $model->login()) {
+            return $this->goBack();
+        } else {
+            return $this->render('login', [
+                'model' => $model,
+            ]);
+        }
     }
 }

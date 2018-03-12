@@ -25,6 +25,7 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
+            'loginUrl' => 'admin/default/login',
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -56,6 +57,7 @@ $config = [
     'modules' => [
         'admin' => [
             'class' => 'app\modules\admin\Module',
+            'layout' => 'admin',
         ],
         'roles' => [
             'class' => 'mdm\admin\Module',
@@ -73,6 +75,8 @@ $config = [
             'site/*',
             'roles/*',
             'gii/*',
+            'admin/*',
+            'debug/*',
         ]
     ],
     'params' => $params,
