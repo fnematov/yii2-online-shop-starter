@@ -50,6 +50,45 @@ use app\modules\admin\widgets\Menu;
                                 ],
                             ]
                         ],
+                        [
+                            'label' => 'Products',
+                            'url' => '#',
+                            'icon' => '<i class="fa fa-archive"></i>',
+                            'items' => [
+                                [
+                                    'label' => 'Categories',
+                                    'url' => ['categories/index']
+                                ],
+                                [
+                                    'label' => 'Brands',
+                                    'url' => ['brands/index']
+                                ],
+                                [
+                                    'label' => 'Products',
+                                    'url' => ['products/index']
+                                ],
+                                [
+                                    'label' => 'Product main page filters',
+                                    'url' => ['main-filter/index']
+                                ],
+                                [
+                                    'label' => 'Product additional filter',
+                                    'url' => ['add-filter/index']
+                                ],
+                                [
+                                    'label' => 'Product sort attributes',
+                                    'url' => ['product-sort-attrs/index']
+                                ],
+                                [
+                                    'label' => 'Product param names',
+                                    'url' => ['product-params/index']
+                                ],
+                                [
+                                    'label' => 'Reviews',
+                                    'url' => ['product-review/index']
+                                ],
+                            ]
+                        ],
                     ]
                 ]);
             } catch ( Exception $e ) {

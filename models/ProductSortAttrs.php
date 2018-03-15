@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "product_sort_attrs".
@@ -12,7 +13,7 @@ use Yii;
  * @property int $status
  * @property string $sort_data
  */
-class ProductSortAttrs extends \yii\db\ActiveRecord
+class ProductSortAttrs extends ActiveRecord
 {
     /**
      * @inheritdoc
@@ -31,6 +32,7 @@ class ProductSortAttrs extends \yii\db\ActiveRecord
             [['name', 'sort_data'], 'required'],
             [['status'], 'integer'],
             [['name', 'sort_data'], 'string', 'max' => 255],
+            ['sort_data', 'in', 'range' => Yii::$app->db->schema->getTableSchema('products')->columnNames],
         ];
     }
 

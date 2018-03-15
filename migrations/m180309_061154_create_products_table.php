@@ -33,6 +33,7 @@ class m180309_061154_create_products_table extends Migration
             'status' => $this->smallInteger()->defaultValue(1),
             'meta_keywords' => $this->string(255),
             'meta_description' => $this->string(255),
+            'slug' => $this->string(255)->unique(),
         ]);
 
         // creates index for column `category_id`

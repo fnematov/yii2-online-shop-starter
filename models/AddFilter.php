@@ -48,7 +48,7 @@ class AddFilter extends \yii\db\ActiveRecord
             'name' => 'Name',
             'parent_id' => 'Parent ID',
             'code' => 'Code',
-            'main_status' => 'Main Status',
+            'main_status' => 'Top part of product',
         ];
     }
 
@@ -66,5 +66,13 @@ class AddFilter extends \yii\db\ActiveRecord
     public function getProducts()
     {
         return $this->hasMany(Products::className(), ['id' => 'products_id'])->viaTable('products_add_filter', ['add_filter_id' => 'id']);
+    }
+    
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getParent()
+    {
+        return $this->hasOne(self::className(), ['id' => 'parent_id']);
     }
 }

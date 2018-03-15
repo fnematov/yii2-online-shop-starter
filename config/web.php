@@ -6,10 +6,10 @@ $db = require __DIR__ . '/db.php';
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => [ 'log' ],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
+        '@npm' => '@vendor/npm-asset',
     ],
     'components' => [
         'request' => [
@@ -42,7 +42,7 @@ $config = [
             'targets' => [
                 [
                     'class' => 'yii\log\FileTarget',
-                    'levels' => ['error', 'warning'],
+                    'levels' => [ 'error', 'warning' ],
                 ],
             ],
         ],
@@ -51,6 +51,14 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+            ],
+        ],
+        'fileStorage' => [
+            'class' => 'trntv\filekit\Storage',
+            'baseUrl' => '@web/uploads',
+            'filesystem' => [
+                'class' => 'app\components\filesystem\LocalFlysystemBuilder',
+                'path' => '@webroot/uploads'
             ],
         ],
     ],
@@ -77,12 +85,23 @@ $config = [
             'gii/*',
             'admin/*',
             'debug/*',
+            'elfinder/*',
+        ]
+    ],
+    'controllerMap' => [
+        'elfinder' => [
+            'class' => 'mihaildev\elfinder\PathController',
+            'access' => [ '@', '?' ],
+            'root' => [
+                'path' => 'uploads',
+                'name' => 'Global'
+            ],
         ]
     ],
     'params' => $params,
 ];
 
-if (YII_ENV_DEV) {
+if ( YII_ENV_DEV ) {
     // configuration adjustments for 'dev' environment
     $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = [
@@ -90,7 +109,7 @@ if (YII_ENV_DEV) {
         // uncomment the following to add your IP if you are not connecting from localhost.
         //'allowedIPs' => ['127.0.0.1', '::1'],
     ];
-
+    
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',

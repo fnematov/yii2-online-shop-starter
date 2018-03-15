@@ -19,7 +19,12 @@
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0",
         "mdmsoft/yii2-admin": "~2.0",
-        "trntv/yii2-datetime-widget": "^1.0"
+        "trntv/yii2-datetime-widget": "^1.0",
+        "unclead/yii2-multiple-input": "~2.0",
+        "kartik-v/yii2-widget-depdrop": "@dev",
+        "mihaildev/yii2-elfinder": "*",
+        "mihaildev/yii2-ckeditor": "*",
+        "trntv/yii2-file-kit": "^1.3"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

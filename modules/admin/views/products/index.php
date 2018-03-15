@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\ProductsSearch */
+/* @var $searchModel app\modules\admin\models\search\ProductsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Products';
@@ -27,7 +27,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'name',
-            'img',
+            [
+                'attribute' => 'img',
+                'format' => 'html',
+                'value' => function ($model) {
+                    return Html::img('/uploads/' . $model->img, ['style' => 'max-width: 200px']);
+                }
+            ],
             'price',
             'discount',
             //'content:ntext',

@@ -2,9 +2,13 @@
 
 namespace app\modules\admin\controllers;
 
+use app\models\BrandsCategories;
+use Throwable;
 use Yii;
 use app\models\Products;
-use app\models\ProductsSearch;
+use app\modules\admin\models\search\ProductsSearch;
+use yii\helpers\ArrayHelper;
+use yii\helpers\Json;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -37,7 +41,7 @@ class ProductsController extends Controller
     {
         $searchModel = new ProductsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+        
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
@@ -94,19 +98,38 @@ class ProductsController extends Controller
             'model' => $model,
         ]);
     }
-
+    
     /**
      * Deletes an existing Products model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
+     * @throws \Exception
+     * @throws Throwable
+     * @throws \yii\db\StaleObjectException
      */
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
+    }
+    
+    public function actionBrandsList()
+    {
+        $request = Yii::$app->request->post('depdrop_parents');
+        $brands = BrandsCategories::find()->joinWith('brands')->where(['categories_id' => $request[0]])->all();
+        
+        $return = [];
+        foreach ($brands as $brand) {
+            $return[] = [
+                'id' => $brand->brands_id,
+                'name' => $brand->brands->name,
+            ];
+        }
+        
+        return Json::encode(['output' => $return, 'selected' => '']);
     }
 
     /**

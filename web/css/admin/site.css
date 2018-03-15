@@ -24,17 +24,40 @@
     white-space: nowrap;
     vertical-align: baseline;
     border-radius: .25rem;
-    color: #fff;
 }
 .glyphicon-eye-open{
     background-color: #5c4ac7;
+    color: #fff;
 }
 .glyphicon-pencil {
     background-color: #26dad2;
+    color: #fff;
 }
 .glyphicon-trash {
     background-color: #ef5350;
+    color: #fff;
 }
 .has-error .help-block {
     color: #fc6180;
+}
+.navbar {
+    margin-bottom: 0 !important;
+}
+.navbar-brand {
+    float: none;
+    height: auto;
+    padding: 0;
+    line-height: unset;
+}
+.upload-kit .upload-kit-input .drag, .upload-kit .upload-kit-input .add {
+    top: 42%;
+}
+.form-control {
+    height: unset;
+}
+.multiple-input-list__item .radio, .multiple-input-list__item .checkbox {
+    margin: 0;
+}
+.radio label, .checkbox label {
+    line-height: 20px;
 }
