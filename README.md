@@ -1,5 +1,5 @@
 # yii2-online-shop-starter
-Yii2 starter application for online shop system (NOT READY)
+Yii2 starter application for online shop system
 
 PHP versiyasi: 7.2
 
@@ -52,3 +52,6 @@ search_stats => Qidiruvlar statistikasi
 widget_carousel => Sliderlar
     key => Kalit. Page nomi
 </pre>
+
+
+Licensed under the [MIT License](LICENSE.md)
